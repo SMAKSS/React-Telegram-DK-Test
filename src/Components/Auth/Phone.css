@@ -1,0 +1,132 @@
+.auth-root {
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+    flex-shrink: 0;
+}
+
+.start-messaging {
+    font-size: 16px;
+    max-width: 360px;
+    border: 1px solid var(--media-in-tile-background);
+    background: var(--media-in-tile-background);
+    border-radius: 50% 50% 0 0;
+    color: var(--background);
+    height: 70px;
+    position: fixed;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    cursor: pointer;
+    z-index: 0;
+}
+
+.start-messaging.active {
+    transition: 0.3s all ease-in-out;
+    height: 100%;
+    border-radius: 15% 15% 0 0;
+    cursor: default;
+}
+
+.form-inputs {
+    z-index: 1;
+    padding: 0 15px;
+}
+
+.form-inputs .MuiFormLabel-root.Mui-focused {
+    color: var(--background);
+}
+
+.form-inputs .MuiOutlinedInput-notchedOutline,
+.form-inputs .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline,
+.form-inputs .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+    border-color: var(--background);
+}
+
+.form-inputs .MuiAutocomplete-popupIndicator,
+.form-inputs .MuiAutocomplete-clearIndicator {
+    color: var(--background);
+}
+
+.form-inputs .MuiFormLabel-root {
+    color: var(--background);
+}
+
+.form-inputs .MuiInputBase-input {
+    color: var(--background);
+}
+
+.auth-title {
+    z-index: 1;
+    color: var(--dialog-color);
+    font-size: 32px;
+    font-weight: 500;
+    margin: 0 auto 7px auto;
+}
+
+.auth-title-typography {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.form-inputs .auth-subtitle {
+    color: var(--shared-media-background);
+    min-height: 72px;
+    margin: 0 auto 14px auto;
+    text-align: center;
+}
+
+.form-inputs .auth-button {
+    margin: 12px 0;
+    padding: 15px 16px;
+    color: var(--media-in-tile-background);
+    background-color: var(--background);
+}
+
+.form-inputs .auth-button:hover {
+    background-color: var(--shared-media-background);
+}
+
+.auth-input {
+    margin: 12px 0;
+}
+
+.sign-in-actions {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-inputs .sign-in-keep {
+    color: var(--background);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 360px;
+    height: 56px;
+    user-select: none;
+}
+
+.sign-in-keep .MuiCheckbox-colorSecondary.Mui-checked {
+    color: var(--background);
+}
+
+.sign-in-keep .MuiCheckbox-colorSecondary.Mui-checked:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.sign-in-keep .MuiCheckbox-root {
+    color: rgba(255, 255, 255, 0.54);
+}
+
+.sign-in-logo {
+    width: 160px;
+    height: 160px;
+    margin: 107px auto 44px;
+}
+
+.sign-in-continue-on {
+    text-align: center;
+    cursor: pointer;
+    height: 54px;
+    margin: 12px 0;
+}

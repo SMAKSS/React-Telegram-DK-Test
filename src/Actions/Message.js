@@ -1,0 +1,26 @@
+import TdLibController from '../Controllers/TdLibController';
+
+export function viewMessages(chatId, messageIds, forceRead) {
+    TdLibController.send({
+        '@type': 'viewMessages',
+        chat_id: chatId,
+        message_ids: messageIds,
+        force_read: forceRead
+    });
+}
+
+export function pinMessage(chatId, messageId, disableNotification = false) {
+    TdLibController.send({
+        '@type': 'pinChatMessage',
+        chat_id: chatId,
+        message_id: messageId,
+        disable_notification: disableNotification
+    });
+}
+
+export function unpinMessage(chatId) {
+    TdLibController.send({
+        '@type': 'unpinChatMessage',
+        chat_id: chatId
+    });
+}

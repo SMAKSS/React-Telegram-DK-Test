@@ -1,0 +1,6 @@
+.safe-link-content-root {
+    min-width: 300px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: break-word;
+}

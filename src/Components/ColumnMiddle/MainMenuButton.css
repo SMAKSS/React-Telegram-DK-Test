@@ -1,0 +1,21 @@
+.main-menu-button {
+    margin: 8px 12px 8px 0;
+}
+
+.delete-dialog-content {
+    display: flex;
+    flex-direction: row;
+}
+
+#delete-dialog-description {
+    margin-left: 12px;
+}
+
+.progress-button {
+    margin-right: 12px !important;
+    padding: 0 !important;
+}
+
+#main-menu .MuiListItemIcon-root {
+    min-width: 40px;
+}

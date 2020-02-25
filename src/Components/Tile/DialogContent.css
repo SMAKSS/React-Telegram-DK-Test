@@ -1,0 +1,24 @@
+.dialog-content {
+    word-wrap: break-word;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 85%;
+    flex-grow: 1;
+    color: var(--dialog-subtle-color);
+}
+
+.dialog-content-accent {
+    color: var(--dialog-color);
+}
+
+.dialog-active .dialog-content,
+.dialog-active .dialog-content-accent,
+.dialog-active .dialog-content-draft,
+.dialog-active .dialog-badge-pinned {
+    color: #fff;
+}
+
+.dialog-content-draft {
+    color: #c05f5a;
+}

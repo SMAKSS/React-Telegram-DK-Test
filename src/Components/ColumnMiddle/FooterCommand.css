@@ -1,0 +1,20 @@
+.footer-command-wrapper {
+    margin-top: 8px;
+    text-align: center;
+    height: 75px;
+    box-sizing: border-box;
+    border-top: 1px solid var(--border);
+    background: var(--panel-background);
+}
+
+.footer-command-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.footer-command-button {
+    margin: 14px;
+    min-width: 100px;
+}

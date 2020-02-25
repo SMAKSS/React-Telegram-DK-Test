@@ -1,0 +1,27 @@
+.reply-tile {
+    margin-left: 4px;
+    width: 32px;
+    height: 32px;
+    min-height: 32px;
+    min-width: 32px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.reply-tile-photo {
+    user-select: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 4px;
+}
+
+.reply-tile-photo-round {
+    border-radius: 50%;
+}
+
+.reply-tile-photo-loading {
+    /*background: aliceblue;*/
+}

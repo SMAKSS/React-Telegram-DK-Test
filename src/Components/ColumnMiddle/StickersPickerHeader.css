@@ -1,0 +1,41 @@
+.stickers-picker-header {
+    min-height: 44px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-color: var(--border);
+    overflow: hidden;
+}
+
+.stickers-picker-header-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    transform: translateZ(0);
+    overflow-y: hidden;
+    padding-bottom: 16px;
+    margin-bottom: -16px;
+    position: relative;
+    background: transparent;
+}
+
+.stickers-picker-header-items {
+    display: flex;
+    flex-direction: row;
+}
+
+.stickers-picker-header-sticker {
+    flex-grow: 0;
+    flex-shrink: 0;
+    min-width: 32px;
+    padding: 6px;
+    cursor: pointer;
+}
+
+.stickers-picker-header-anchor {
+    height: 3px;
+    width: 44px;
+    will-change: transform;
+    position: absolute;
+    bottom: 16px;
+    transition: transform 500ms ease-out;
+    background: var(--color-accent-dark);
+}

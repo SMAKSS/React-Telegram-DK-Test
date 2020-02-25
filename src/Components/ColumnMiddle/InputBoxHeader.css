@@ -1,0 +1,21 @@
+.inputbox-header {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin-bottom: -12px;
+}
+
+.inputbox-header-left-column {
+    margin-right: 2px;
+}
+
+.inputbox-header-middle-column {
+    flex-grow: 1;
+    flex-shrink: 1;
+    overflow: hidden;
+}
+
+.inputbox-header-right-column {
+    margin-left: 20px;
+    min-width: 48px;
+}

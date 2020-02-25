@@ -1,0 +1,13 @@
+.found-public-chat {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.found-public-chat .dialog-wrapper {
+    padding: 9px 21px 9px 18px;
+}
+
+.found-public-chat.item-selected .dialog-wrapper {
+    background: var(--color-accent-main);
+    color: #fff;
+}

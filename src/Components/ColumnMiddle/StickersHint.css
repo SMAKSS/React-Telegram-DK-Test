@@ -1,0 +1,17 @@
+.stickers-hint {
+    border-top: 1px solid var(--border);
+    background: var(--panel-background);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-height: 190px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sticker-hints-item {
+    padding: 6px;
+}

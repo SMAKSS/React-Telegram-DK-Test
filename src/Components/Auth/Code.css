@@ -1,0 +1,18 @@
+.confirm-code-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.code-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.auth-subtitle {
+    color: var(--message-in-subtle-color);
+    min-height: 72px;
+    margin: 0 auto 14px auto;
+    text-align: center;
+}

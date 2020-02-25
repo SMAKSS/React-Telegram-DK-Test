@@ -1,0 +1,41 @@
+.game {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+    font-size: 14px;
+    line-height: normal;
+}
+
+.game-wrapper {
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin-left: 8px;
+    overflow: hidden;
+}
+
+.game-border {
+    min-width: 2px;
+    border-radius: 1px;
+}
+
+.game-title {
+    color: var(--color-accent-main);
+}
+
+.message-bubble-out .game-title {
+    color: var(--message-out-reply-title);
+}
+
+.game-text {
+}
+
+.game-description {
+}
+
+.game-photo {
+    margin-top: 6px;
+    border-radius: 4px;
+    transform: translateZ(0);
+    overflow: hidden;
+    cursor: pointer;
+}

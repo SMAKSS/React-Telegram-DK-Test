@@ -1,0 +1,9 @@
+.poll-results-content {
+    padding: 0 8px 8px;
+}
+
+.poll-results-question {
+    margin: 0 12px;
+    font-size: 20px;
+    line-height: normal;
+}

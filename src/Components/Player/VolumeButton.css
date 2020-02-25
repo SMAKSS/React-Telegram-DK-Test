@@ -1,0 +1,9 @@
+.volume-button-panel {
+    margin-top: 8px;
+    border: 1px solid var(--border);
+    background: var(--panel-background);
+    display: flex;
+    height: 100px;
+    width: 28px;
+    padding: 13px 0;
+}

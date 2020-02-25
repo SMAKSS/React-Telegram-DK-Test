@@ -1,0 +1,16 @@
+.poll-percentage {
+    width: 38px;
+    position: fixed;
+    transform: translateX(-4px);
+    text-align: right;
+    transition: opacity 0.2s linear;
+    font-weight: bold;
+}
+
+.poll-percentage-action {
+    color: inherit;
+}
+
+.poll-option-unselected .poll-percentage {
+    opacity: 0;
+}

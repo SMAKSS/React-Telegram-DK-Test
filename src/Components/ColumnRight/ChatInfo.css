@@ -1,0 +1,15 @@
+.chat-info {
+    border-left: 1px solid var(--border);
+    background: var(--panel-background);
+}
+
+.right-column {
+    position: relative;
+    float: left;
+    width: calc(25% - 0px);
+    margin: 0;
+    box-sizing: border-box;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}

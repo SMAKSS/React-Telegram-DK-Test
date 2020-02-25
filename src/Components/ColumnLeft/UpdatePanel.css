@@ -1,0 +1,8 @@
+.update-button {
+    margin: 0;
+    padding: 24px;
+    width: 100%;
+    border-radius: 0;
+    color: white;
+    max-height: 65px;
+}

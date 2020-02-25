@@ -1,0 +1,15 @@
+.error-handler {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+.error-handler pre {
+    background-color: rgba(206, 17, 38, 0.05);
+    color: rgb(206, 17, 38);
+    border: 0;
+    max-height: 150px;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}

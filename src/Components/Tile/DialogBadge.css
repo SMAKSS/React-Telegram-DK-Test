@@ -1,0 +1,88 @@
+.dialog-badge {
+    position: absolute;
+    right: -6px;
+    bottom: -25px;
+    font-size: 8px;
+    padding: 0 6px;
+    border-radius: 100px;
+    min-width: 36px;
+    min-height: 45px;
+    box-sizing: border-box;
+    text-align: center;
+    margin-top: -3px;
+    margin-left: 6px;
+    font-weight: 500;
+    color: var(--background);
+    background: var(--color-accent-main);
+    vertical-align: baseline;
+    white-space: nowrap;
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.dialog-badge-muted {
+    background: var(--badge-muted);
+}
+
+.dialog-badge-text {
+    position: absolute;
+    top: 0;
+    left: 18%;
+    min-width: 20px;
+}
+
+.dialog-badge-mention {
+    min-width: 24px;
+    transform: translateY(-1px);
+    margin: 0 -6px;
+}
+
+.dialog-badge-pinned {
+    border-radius: 12px;
+    margin-top: -3px;
+    margin-left: 6px;
+    color: var(--badge-muted);
+    background: transparent;
+    vertical-align: baseline;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.item-selected .dialog-badge {
+    background: #ffffff77;
+}
+
+.dialog-badge-pinned-icon {
+    stroke: currentColor;
+    font-size: 24px;
+}
+
+.dialog-badge-unread {
+    display: inline-block;
+    float: right;
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 3px 0 0;
+    min-width: 8px;
+    transform: translateY(3px);
+    background: var(--color-accent-light);
+}
+
+.dialog-active .dialog-badge-unread {
+    background: #ffffff77;
+}
+
+.dialog-badge-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-left: 6px;
+    height: 48px;
+}

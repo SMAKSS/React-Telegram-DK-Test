@@ -1,0 +1,55 @@
+.chat-details {
+    margin: 0;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-details-list .chat-details-info {
+    margin: 0;
+    animation: rightToLeftTransition 1s alternate backwards;
+}
+
+.chat-details-list {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    flex-grow: 1;
+    flex-shrink: 1;
+    will-change: transform;
+    padding: 8px 0;
+}
+
+.chat-details-info-icon {
+    transform: rotateZ(180deg);
+}
+
+.chat-details-list .list-item.username {
+    animation: rightToLeftTransition 1.2s alternate backwards;
+}
+
+.chat-details-list .list-item.phone-number {
+    animation: rightToLeftTransition 1.4s alternate backwards;
+}
+
+.chat-details-list .list-item.bio {
+    animation: rightToLeftTransition 1.6s alternate backwards;
+}
+
+.chat-details-list .second-list {
+    animation: rightToLeftTransition 1.8s alternate backwards;
+}
+
+.chat-details-list .third-list {
+    animation: rightToLeftTransition 1.8s alternate backwards;
+}
+
+@keyframes rightToLeftTransition {
+    from {
+        transform: translateX(50px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}

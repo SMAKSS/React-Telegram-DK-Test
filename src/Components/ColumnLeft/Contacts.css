@@ -1,0 +1,20 @@
+.contacts {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: var(--panel-background);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.contacts-list {
+    flex-grow: 1;
+    flex-shrink: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    transform: translateZ(0);
+    padding: 0 8px 8px;
+}

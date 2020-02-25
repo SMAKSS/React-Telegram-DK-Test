@@ -1,0 +1,26 @@
+.playlist {
+    position: relative;
+    top: 22px;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.playlist-wrapper {
+    border: 1px solid var(--border);
+    background: var(--panel-background);
+    position: absolute;
+}
+
+.playlist-items {
+    width: 300px;
+    max-height: 330px;
+    padding: 0 12px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
+}
+
+.playlist-item {
+    padding: 6px 0;
+}

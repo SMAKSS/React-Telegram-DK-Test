@@ -1,0 +1,12 @@
+.header-chat {
+    margin-left: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
+}
+
+.header-chat-content {
+    margin-left: 16px;
+    overflow: hidden;
+}

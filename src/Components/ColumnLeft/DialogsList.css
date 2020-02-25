@@ -1,0 +1,14 @@
+.dialogs-list {
+    background: var(--panel-background);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+    height: 100%;
+    transform: translateZ(0);
+    will-change: transform;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}

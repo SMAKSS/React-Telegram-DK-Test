@@ -1,0 +1,20 @@
+.dialog-details {
+    float: left;
+    width: calc(75% - 0px);
+    /*max-width: 672px;*/
+    margin: 0;
+    box-sizing: border-box;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--chat-background);
+}
+
+.light .dialog-details {
+    background-image: url('../../Assets/bg.jpg');
+    background-size: cover;
+}
+
+.dialog-details-third-column {
+    width: calc(50% - 0px);
+}

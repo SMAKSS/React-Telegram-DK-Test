@@ -1,0 +1,18 @@
+.media-caption {
+    position: absolute;
+    bottom: 12px;
+    max-width: 600px;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 4px;
+}
+
+.media-caption-text {
+    margin: 12px;
+    text-align: center;
+    overflow-wrap: break-word;
+}
+
+.media-caption-text figcaption cite {
+    display: block;
+}

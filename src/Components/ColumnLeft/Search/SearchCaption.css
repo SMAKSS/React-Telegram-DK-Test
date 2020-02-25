@@ -1,0 +1,15 @@
+.search-caption {
+    padding: 4px 22px;
+    display: flex;
+    flex-direction: row;
+}
+
+.search-caption-title {
+    flex-grow: 1;
+    flex-shrink: 1;
+    user-select: none;
+    word-wrap: break-word;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

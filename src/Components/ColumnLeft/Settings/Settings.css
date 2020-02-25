@@ -1,0 +1,50 @@
+.settings {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    transform: translateZ(0);
+    background: var(--panel-background);
+    padding: 8px 8px 8px;
+}
+
+.settings .chat-details-info {
+    animation: leftToRightTransition 1s alternate backwards;
+}
+
+.settings .settings-list-item {
+    padding: 12px;
+    border-radius: 10px;
+    animation: leftToRightTransition 1.5s alternate backwards;
+}
+
+.settings-list-item2 {
+    padding: 12px;
+    border-radius: 10px;
+}
+
+.settings-list-item-icon {
+    margin: 4px 0 4px 4px;
+    align-self: flex-start;
+}
+
+.settings-list-item-text {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.settings-list-item-text2 {
+    margin: 2px 4px;
+}
+
+@keyframes leftToRightTransition {
+    from {
+        transform: translateX(-50px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}

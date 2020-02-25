@@ -1,0 +1,28 @@
+.authorization-form {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    height: 100%;
+}
+
+.authorization-form-content {
+    margin: 0 auto 0;
+    max-width: 360px;
+}
+
+.authorization-header {
+    font-size: 22px;
+    font-family: 'Product Sans', 'Roboto', sans-serif;
+    padding: 22px 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.authorization-header-content {
+    word-wrap: break-word;
+    white-space: nowrap;
+}
+
+.authorization-actions {
+    text-align: center;
+    display: flex;
+}

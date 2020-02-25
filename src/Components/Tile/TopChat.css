@@ -1,0 +1,18 @@
+.top-chat {
+    padding: 6px 12px;
+    box-sizing: border-box;
+    max-width: 72px;
+    display: flex;
+    flex-direction: column;
+}
+
+.top-chat-title {
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 6px -12px 0;
+    font-size: 12px;
+    line-height: normal;
+    user-select: none;
+}

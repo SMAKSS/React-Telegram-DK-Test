@@ -1,0 +1,13 @@
+.dialog-status {
+    word-wrap: break-word;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-grow: 1;
+    font-size: 14px;
+    color: var(--dialog-subtle-color);
+}
+
+.dialog-status-accent {
+    color: var(--color-accent-dark);
+}

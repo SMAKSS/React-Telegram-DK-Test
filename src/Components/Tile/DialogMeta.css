@@ -1,0 +1,10 @@
+.dialog-meta {
+    font-size: 12px;
+    white-space: nowrap;
+    margin: 1px 0 -1px 6px;
+    color: var(--dialog-meta-color);
+}
+
+.dialog-meta .status {
+    color: var(--dialog-meta-read-color);
+}
