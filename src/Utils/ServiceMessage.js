@@ -542,6 +542,8 @@ function getServiceMessageContent(message, openUser = false) {
                         pinnedContent = ' pinned a voice message';
                         break;
                     }
+                    default:
+                        break;
                 }
             }
 
@@ -588,6 +590,8 @@ function getServiceMessageContent(message, openUser = false) {
         case 'messageWebsiteConnected': {
             return `You allowed this bot to message you when you logged in on ${content.domain_name}.`;
         }
+        default:
+            break;
     }
 
     return `[${message.content['@type']}]`;

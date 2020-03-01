@@ -18,7 +18,7 @@ class RelatedArticle extends React.Component {
     };
 
     render() {
-        const { author, description, publishDate, title, url } = this.props;
+        const { author, publishDate, title, url } = this.props;
 
         const d = publishDate > 0 ? new Date(publishDate * 1000) : null;
         const hasAuthorDateSeparator = author && d;

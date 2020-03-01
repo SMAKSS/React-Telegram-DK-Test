@@ -215,6 +215,8 @@ class Header extends Component {
                     subtitle = '';
                     showProgressAnimation = true;
                     break;
+                default:
+                    break;
             }
         } else if (authorizationState) {
             switch (authorizationState['@type']) {
@@ -244,6 +246,8 @@ class Header extends Component {
                     title = this.localize('Loading');
                     subtitle = '';
                     showProgressAnimation = true;
+                    break;
+                default:
                     break;
             }
         } else {

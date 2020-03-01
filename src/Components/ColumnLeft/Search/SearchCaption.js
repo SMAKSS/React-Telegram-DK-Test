@@ -8,7 +8,11 @@ function SearchCaption(props) {
     return (
         <div className='search-caption'>
             <div className='search-caption-title'>{caption}</div>
-            {Boolean(command) && <a onClick={onClick}>{command}</a>}
+            {Boolean(command) && (
+                <a href='/#' onClick={onClick}>
+                    {command}
+                </a>
+            )}
         </div>
     );
 }

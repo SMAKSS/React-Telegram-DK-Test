@@ -1372,20 +1372,6 @@ function cancelLoadMediaViewerContent(messages) {
                     const { photo } = content;
                     if (!photo) break;
 
-                    // preview
-                    /*let [previewId, previewPid, previewIdbKey] = getPhotoPreviewFile(message);
-          if (previewPid) {
-              let preview = this.getPreviewPhotoSize(message.content.photo.sizes);
-              if (!preview.blob){
-                  FileStore.getLocalFile(store, preview, null,
-                      () => MessageStore.updateMessagePhoto(message.id),
-                      () => { if (loadRemote)  FileStore.getRemoteFile(previewId, 2, message); },
-                      'load_contents_preview_',
-                      message.id);
-
-              }
-          }*/
-
                     const photoSize = getSize(photo.sizes, PHOTO_BIG_SIZE);
                     if (!photoSize) break;
 
@@ -1443,6 +1429,8 @@ function cancelLoadMediaViewerContent(messages) {
 
                     break;
                 }
+                default:
+                    break;
             }
         }
     }
@@ -1521,6 +1509,8 @@ function loadMediaViewerContent(messages, useSizeLimit = false) {
                     loadVideoContent(store, video, message, useSizeLimit);
                     break;
                 }
+                default:
+                    break;
             }
         }
     }
@@ -1636,6 +1626,8 @@ function loadProfileMediaViewerContent(chatId, photos) {
                 loadUserFileContent(store, big, userId);
                 break;
             }
+            default:
+                break;
         }
     });
 }
@@ -2004,6 +1996,8 @@ function loadPageBlockContent(store, b) {
             loadPageBlockContent(store, caption);
             break;
         }
+        default:
+            break;
     }
 }
 
@@ -2102,6 +2096,8 @@ function loadRichTextContent(store, t) {
             loadRichTextContent(store, text);
             break;
         }
+        default:
+            break;
     }
 }
 

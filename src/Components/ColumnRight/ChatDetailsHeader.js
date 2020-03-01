@@ -7,10 +7,6 @@ import { isChannelChat, isPrivateChat } from '../../Utils/Chat';
 import './ChatDetailsHeader.css';
 
 class ChatDetailsHeader extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         const { chatId, t, backButton, onClick, onClose } = this.props;
 

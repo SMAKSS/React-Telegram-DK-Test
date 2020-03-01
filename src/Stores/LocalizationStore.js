@@ -158,6 +158,8 @@ class LocalizationStore extends EventEmitter {
                             language: lng
                         });
                         break;
+                    default:
+                        break;
                 }
                 break;
             }
@@ -167,6 +169,8 @@ class LocalizationStore extends EventEmitter {
                 this.emit('updateLanguagePackStrings', update);
                 break;
             }
+            default:
+                break;
         }
     };
 
@@ -190,6 +194,8 @@ class LocalizationStore extends EventEmitter {
                 this.emit('clientUpdateLanguageChange', update);
                 break;
             }
+            default:
+                break;
         }
     };
 
@@ -230,6 +236,8 @@ class LocalizationStore extends EventEmitter {
                 case 'languagePackStringValueDeleted': {
                     break;
                 }
+                default:
+                    break;
             }
         }
 

@@ -228,7 +228,7 @@ function Punycode() {
         if (preserveCase) {
             // Preserve case, step2 of 2: Modify the list to true/false
             for (j = 0; j < input_length; j++) {
-                case_flags[j] = input[j] != case_flags[j];
+                case_flags[j] = input[j] !== case_flags[j];
             }
         }
 
@@ -280,7 +280,7 @@ function Punycode() {
                     if (++delta > maxint) return Error('punycode_overflow(2)');
                 }
 
-                if (ijv == n) {
+                if (ijv === n) {
                     // Represent delta as a generalized variable-length integer:
                     for (q = delta, k = base; ; k += base) {
                         t = k <= bias ? tmin : k >= bias + tmax ? tmax : k - bias;
@@ -289,7 +289,7 @@ function Punycode() {
                         q = Math.floor((q - t) / (base - t));
                     }
                     output.push(String.fromCharCode(encode_digit(q, preserveCase && case_flags[j] ? 1 : 0)));
-                    bias = adapt(delta, h + 1, h == b);
+                    bias = adapt(delta, h + 1, h === b);
                     delta = 0;
                     ++h;
                 }

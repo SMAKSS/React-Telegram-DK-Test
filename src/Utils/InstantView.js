@@ -353,6 +353,8 @@ export function getPageBlock(block, iv, key = undefined) {
             );
             break;
         }
+        default:
+            break;
     }
 
     if (element) {
@@ -447,6 +449,8 @@ export function getRichText(richText) {
 
             return <Url text={text} url={url} />;
         }
+        default:
+            break;
     }
 
     return `[${richText['@type']}]`;
@@ -529,6 +533,8 @@ export function isEmptyText(richText) {
 
             return isEmptyText(text);
         }
+        default:
+            break;
     }
 
     return false;
@@ -547,6 +553,8 @@ export function getHorizontalAlignment(align) {
         case 'pageBlockHorizontalAlignmentRight': {
             return 'right';
         }
+        default:
+            break;
     }
 
     return null;
@@ -565,6 +573,8 @@ export function getVerticalAlignment(valign) {
         case 'pageBlockVerticalAlignmentTop': {
             return 'top';
         }
+        default:
+            break;
     }
 
     return null;
@@ -679,6 +689,8 @@ export function getInnerBlocks(block) {
         case 'pageBlockVideo': {
             return [block.caption];
         }
+        default:
+            break;
     }
 
     return [];
@@ -697,6 +709,8 @@ export function getBlockMedia(block) {
         case 'pageBlockVideo': {
             return block.video;
         }
+        default:
+            break;
     }
 
     return null;
@@ -715,6 +729,8 @@ export function getBlockCaption(block) {
         case 'pageBlockVideo': {
             return block.caption;
         }
+        default:
+            break;
     }
 
     return null;
@@ -723,10 +739,8 @@ export function getBlockCaption(block) {
 export function getBlockUrl(block) {
     if (!block) return null;
 
-    switch (block['@type']) {
-        case 'pageBlockPhoto': {
-            return block.url;
-        }
+    if (block['@type'] === 'pageBlockPhoto') {
+        return block.url;
     }
 
     return null;
@@ -745,6 +759,8 @@ export function isValidMediaBlock(block) {
         case 'pageBlockVideo': {
             return true;
         }
+        default:
+            break;
     }
 
     return false;

@@ -176,6 +176,8 @@ class Poll extends React.Component {
                     subtitle = is_anonymous ? t('AnonymousQuizPoll') : t('QuizPoll');
                     break;
                 }
+                default:
+                    break;
             }
         }
 

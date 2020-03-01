@@ -78,6 +78,8 @@ function getUserStatus(user) {
         case 'userStatusRecently': {
             return 'last seen recently';
         }
+        default:
+            break;
     }
 
     return null;
@@ -107,11 +109,14 @@ function getUserFullName(userId, user, t = k => k) {
             if (first_name && last_name) return `${first_name} ${last_name}`;
             if (first_name) return first_name;
             if (last_name) return last_name;
+            break;
         }
         case 'userTypeDeleted':
         case 'userTypeUnknown': {
             return t('HiddenName');
         }
+        default:
+            break;
     }
 
     return null;
@@ -129,11 +134,14 @@ function getUserShortName(userId, t = k => k) {
         case 'userTypeRegular': {
             if (first_name) return first_name;
             if (last_name) return last_name;
+            break;
         }
         case 'userTypeDeleted':
         case 'userTypeUnknown': {
             return t('HiddenName');
         }
+        default:
+            break;
     }
 
     return null;
@@ -189,6 +197,8 @@ function getUserStatusOrder(user) {
         case 'userStatusRecently': {
             return 1000;
         }
+        default:
+            break;
     }
 }
 

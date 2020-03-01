@@ -221,7 +221,6 @@ class VideoNote extends React.Component {
 
     onClientUpdateMediaActive = update => {
         const { chatId, messageId } = this.props;
-        const { video } = this.props.videoNote;
 
         if (chatId === update.chatId && messageId === update.messageId) {
             if (this.state.active) {
@@ -294,7 +293,7 @@ class VideoNote extends React.Component {
     };
 
     render() {
-        const { displaySize, chatId, messageId, openMedia } = this.props;
+        const { chatId, messageId, openMedia } = this.props;
         const { active, currentTime, videoDuration } = this.state;
         const { minithumbnail, thumbnail, video, duration } = this.props.videoNote;
 

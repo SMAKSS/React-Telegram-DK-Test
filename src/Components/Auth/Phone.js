@@ -246,6 +246,18 @@ class Phone extends React.Component {
     };
 
     onUpdateConnectionState = update => {
+        const { connecting, startMessaging } = this.state;
+        this.startMessagingFlag = !(!connecting && !startMessaging);
+        console.log(this.startMessagingFlag);
+
+        if (!this.startMessagingFlag) {
+            this.setState({ startMessaging: true });
+            this.startMessagingButtonStyle.current.classList.remove('active');
+            this.startMessagingButtonStyle.current.innerHTML = 'Start Messaging';
+            this.loginTitle.current.style.color = '';
+            document.getElementsByClassName('auth-caption-telegram-logo')[0].classList.remove('active');
+        }
+
         const { state } = update;
 
         if (state['@type'] === 'connectionStateReady') {
@@ -406,7 +418,7 @@ class Phone extends React.Component {
 
         const title = connecting ? cleanProgressStatus(t('Connecting')) : t('SignInToTelegram');
         const VPNCaution = connecting ? 'If telegram is banned in your country please use a proper VPN!' : '';
-        const startMessagingFlag = !(!connecting && !startMessaging);
+        this.startMessagingFlag = !(!connecting && !startMessaging);
 
         return (
             <form className='auth-root' autoComplete='off'>
@@ -427,7 +439,7 @@ class Phone extends React.Component {
                         Start Messaging
                     </button>
                 )}
-                {!startMessagingFlag && (
+                {!this.startMessagingFlag && (
                     <div className='form-inputs'>
                         <Typography variant='body1' className='auth-subtitle' style={{ width: 254 }}>
                             {t('StartText')}

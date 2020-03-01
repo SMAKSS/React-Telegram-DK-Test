@@ -178,7 +178,6 @@ class ProfileMediaViewer extends React.Component {
         }
 
         let inputFile = null;
-        let inputMessagePhoto = null;
         const inHistory = this.history && index >= 0 && index < this.history.length;
         if (inHistory) {
             const photo = getProfilePhoto(this.history[index]);
@@ -232,7 +231,7 @@ class ProfileMediaViewer extends React.Component {
     };
 
     handleDelete = () => {
-        const { chatId, messageId } = this.props;
+        const { chatId } = this.props;
         const { currentIndex, totalCount } = this.state;
 
         let index = -1;
@@ -327,15 +326,7 @@ class ProfileMediaViewer extends React.Component {
 
     render() {
         const { chatId, t } = this.props;
-        const {
-            currentIndex,
-            hasNextMedia,
-            hasPreviousMedia,
-            firstSliceLoaded,
-            totalCount,
-            deleteConfirmationOpened,
-            deleteForAll
-        } = this.state;
+        const { currentIndex, hasNextMedia, hasPreviousMedia, totalCount } = this.state;
 
         let index = -1;
         if (totalCount) {

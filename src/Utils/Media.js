@@ -8,7 +8,7 @@ export function getCallTitle(chatId, messageId) {
     const { content, is_outgoing } = message;
     if (content['@type'] !== 'messageCall') return null;
 
-    const { discard_reason, duration } = content;
+    const { discard_reason } = content;
     if (is_outgoing) {
         return discard_reason['@type'] === 'callDiscardReasonMissed' ? 'Cancelled Call' : 'Outgoing Call';
     } else if (discard_reason['@type'] === 'callDiscardReasonMissed') {
@@ -41,6 +41,8 @@ export function isEditedMedia(chatId, messageId) {
         case 'messageVideo': {
             return true;
         }
+        default:
+            break;
     }
 
     return false;
@@ -442,6 +444,8 @@ export function getInputMediaContent(media, text) {
                 waveform
             };
         }
+        default:
+            break;
     }
 
     return null;

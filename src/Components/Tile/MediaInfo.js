@@ -8,10 +8,6 @@ import MessageStore from '../../Stores/MessageStore';
 import './MediaInfo.css';
 
 class MediaInfo extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         const { chatId, messageId } = this.props;
 

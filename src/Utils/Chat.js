@@ -1,4 +1,3 @@
-import React from 'react';
 import dateFormat from '../Utils/Date';
 import { getUserFullName, getUserShortName, getUserStatus, isUserOnline } from './User';
 import { getSupergroupStatus } from './Supergroup';
@@ -240,6 +239,8 @@ function getChatTypingString(chatId) {
             const typingString = getGroupChatTypingString(typingManager);
             return typingString ? typingString + '...' : null;
         }
+        default:
+            break;
     }
 
     return null;
@@ -320,7 +321,7 @@ function isChatUnread(chatId) {
     const chat = ChatStore.get(chatId);
     if (!chat) return false;
 
-    const { is_marked_as_unread, unread_count, unread_mention_count } = chat;
+    const { is_marked_as_unread, unread_count } = chat;
 
     return is_marked_as_unread || unread_count > 0;
 }
@@ -403,6 +404,8 @@ export function getScopeNotificationSettings(chatId) {
             }
             return settings;
         }
+        default:
+            break;
     }
 
     return null;
@@ -470,6 +473,8 @@ function getChatSubtitleWithoutTyping(chatId) {
 
             break;
         }
+        default:
+            break;
     }
 
     return null;
@@ -523,6 +528,8 @@ function isAccentChatSubtitleWithoutTyping(chatId) {
         case 'chatTypeSupergroup': {
             return false;
         }
+        default:
+            break;
     }
 
     return false;
@@ -560,6 +567,8 @@ function getChatUsername(chatId) {
             }
             break;
         }
+        default:
+            break;
     }
 
     return null;
@@ -586,6 +595,8 @@ function getChatPhoneNumber(chatId) {
         case 'chatTypeSupergroup': {
             return null;
         }
+        default:
+            break;
     }
 
     return null;
@@ -617,6 +628,8 @@ function getChatBio(chatId) {
 
             break;
         }
+        default:
+            break;
     }
 
     return null;
@@ -636,6 +649,8 @@ function isPrivateChat(chatId) {
         case 'chatTypeSecret': {
             return true;
         }
+        default:
+            break;
     }
 
     return false;
@@ -655,6 +670,8 @@ function isGroupChat(chatId) {
         case 'chatTypeSecret': {
             return false;
         }
+        default:
+            break;
     }
 
     return false;
@@ -676,6 +693,8 @@ function isChannelChat(chatId) {
         case 'chatTypeSecret': {
             return false;
         }
+        default:
+            break;
     }
 
     return false;
@@ -711,6 +730,8 @@ function isChatMember(chatId) {
                     case 'chatMemberStatusRestricted': {
                         return supergroup.status.is_member;
                     }
+                    default:
+                        break;
                 }
             }
             break;
@@ -737,6 +758,8 @@ function isChatMember(chatId) {
                     case 'chatMemberStatusRestricted': {
                         return basicGroup.status.is_member;
                     }
+                    default:
+                        break;
                 }
             }
             break;
@@ -745,6 +768,8 @@ function isChatMember(chatId) {
         case 'chatTypeSecret': {
             return true;
         }
+        default:
+            break;
     }
 
     return false;
@@ -778,6 +803,8 @@ export function isDeletedPrivateChat(chatId) {
 
             return user && user.type['@type'] === 'userTypeDeleted';
         }
+        default:
+            break;
     }
 
     return fallbackValue;
@@ -798,6 +825,8 @@ function isMeChat(chatId) {
         case 'chatTypePrivate': {
             return UserStore.getMyId() === chat.type.user_id;
         }
+        default:
+            break;
     }
 
     return fallbackValue;
@@ -825,6 +854,8 @@ function getGroupChatMembers(chatId) {
         case 'chatTypePrivate': {
             break;
         }
+        default:
+            break;
     }
 
     return fallbackValue;
@@ -862,6 +893,8 @@ async function getChatFullInfo(chatId) {
                 supergroup_id: type.supergroup_id
             });
         }
+        default:
+            break;
     }
 
     return null;
@@ -980,6 +1013,8 @@ function canSendMediaMessages(chatId) {
                 case 'chatMemberStatusRestricted': {
                     return is_member && permissions && permissions.can_send_media_messages;
                 }
+                default:
+                    break;
             }
 
             break;
@@ -1016,8 +1051,13 @@ function canSendMediaMessages(chatId) {
                 case 'chatMemberStatusRestricted': {
                     return can_send_media_messages && is_member && permissions && permissions.can_send_media_messages;
                 }
+                default:
+                    break;
             }
+            break;
         }
+        default:
+            break;
     }
 
     return false;
@@ -1043,6 +1083,8 @@ function getChatShortTitle(chatId, showSavedMessages = false, t = k => k) {
         case 'chatTypeSecret': {
             return getUserShortName(chat.type.user_id, t);
         }
+        default:
+            break;
     }
 
     return null;
@@ -1074,6 +1116,8 @@ function getGroupChatMembersCount(chatId) {
         case 'chatTypeSecret': {
             return 0;
         }
+        default:
+            break;
     }
 
     return 0;
@@ -1100,6 +1144,8 @@ function canClearHistory(chatId) {
         case 'chatTypeSecret': {
             return true;
         }
+        default:
+            break;
     }
 
     return false;
@@ -1148,6 +1194,8 @@ function canSendPolls(chatId) {
                 case 'chatMemberStatusRestricted': {
                     return is_member && permissions && permissions.can_send_polls;
                 }
+                default:
+                    break;
             }
 
             break;
@@ -1184,8 +1232,13 @@ function canSendPolls(chatId) {
                 case 'chatMemberStatusRestricted': {
                     return can_send_polls && is_member && permissions && permissions.can_send_polls;
                 }
+                default:
+                    break;
             }
+            break;
         }
+        default:
+            break;
     }
 
     return false;
@@ -1230,6 +1283,8 @@ function canSendMessages(chatId) {
                 case 'chatMemberStatusRestricted': {
                     return is_member && permissions && permissions.can_send_messages;
                 }
+                default:
+                    break;
             }
 
             break;
@@ -1266,8 +1321,13 @@ function canSendMessages(chatId) {
                 case 'chatMemberStatusRestricted': {
                     return can_send_messages && is_member && permissions && permissions.can_send_messages;
                 }
+                default:
+                    break;
             }
+            break;
         }
+        default:
+            break;
     }
 
     return false;
@@ -1348,6 +1408,8 @@ function canPinMessages(chatId) {
                 case 'chatMemberStatusRestricted': {
                     return is_member && permissions && permissions.can_pin_messages;
                 }
+                default:
+                    break;
             }
 
             break;
@@ -1384,8 +1446,13 @@ function canPinMessages(chatId) {
                 case 'chatMemberStatusRestricted': {
                     return can_pin_messages && is_member && permissions && permissions.can_pin_messages;
                 }
+                default:
+                    break;
             }
+            break;
         }
+        default:
+            break;
     }
 
     return false;
@@ -1413,6 +1480,8 @@ function isChatVerified(chatId) {
 
             return supergroup && supergroup.is_verified;
         }
+        default:
+            break;
     }
 
     return false;
@@ -1438,6 +1507,8 @@ function isChatSecret(chatId) {
         case 'chatTypeSupergroup': {
             return false;
         }
+        default:
+            break;
     }
 
     return false;

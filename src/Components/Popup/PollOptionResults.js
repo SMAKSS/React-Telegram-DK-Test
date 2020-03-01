@@ -161,7 +161,9 @@ class PollOptionResults extends React.Component {
                 <div className='poll-option-results-caption'>
                     <div className='poll-option-results-answer'>{`${text} — ${vote_percentage}%`}</div>
                     {showCollapse ? (
-                        <a onClick={this.handleCollapse}>{t('PollCollapse')}</a>
+                        <a href='/#' onClick={this.handleCollapse}>
+                            {t('PollCollapse')}
+                        </a>
                     ) : (
                         <div className='poll-option-results-count'>{voterCount}</div>
                     )}

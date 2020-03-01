@@ -221,6 +221,8 @@ class SharedLink extends React.Component {
                             case 'textEntityTypeEmailAddress':
                                 mail = true;
                                 break;
+                            default:
+                                break;
                         }
 
                         title = title || this.getTitleFromUrl(url) || ' ';

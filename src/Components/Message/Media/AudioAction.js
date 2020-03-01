@@ -128,7 +128,6 @@ class AudioAction extends React.Component {
 
     getTimeString = (currentTime, duration, active, file) => {
         const isDownloadingCompleted = file.local && file.local.is_downloading_completed;
-        const isUploadingCompleted = file.remote && file.remote.is_uploading_completed;
 
         const durationString = getDurationString(Math.floor(duration || 0));
         const currentTimeString = getDurationString(Math.floor(currentTime || 0));
@@ -144,7 +143,6 @@ class AudioAction extends React.Component {
         const isDownloadingActive = file.local && file.local.is_downloading_active;
         const isUploadingActive = file.remote && file.remote.is_uploading_active;
         const isDownloadingCompleted = file.local && file.local.is_downloading_completed;
-        const isUploadingCompleted = file.remote && file.remote.is_uploading_completed;
 
         const size = getFileSize(file);
         let progressSize = null;

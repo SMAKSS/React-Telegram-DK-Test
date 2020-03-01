@@ -161,6 +161,7 @@ class CacheStore extends EventEmitter {
                     if (basicGroup) {
                         basicGroupMap.set(basicGroup.id, basicGroup);
                     }
+                    break;
                 }
                 case 'chatTypePrivate':
                 case 'chatTypeSecret': {

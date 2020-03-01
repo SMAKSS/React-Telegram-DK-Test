@@ -124,7 +124,7 @@ class PinnedMessage extends React.Component {
                 this.forceUpdate();
             })
             .catch(error => {
-                const { code, message } = error;
+                const { message } = error;
                 if (message !== 'Chat not found') {
                     const deletedMessage = {
                         '@type': 'deletedMessage',

@@ -218,8 +218,7 @@ class ChatInfo extends React.Component {
     };
 
     render() {
-        // console.log('ChatDetails.ChatInfo.render', this.state);
-        const { classes, className, popup } = this.props;
+        const { className, popup } = this.props;
         const {
             chatId,
             counters,

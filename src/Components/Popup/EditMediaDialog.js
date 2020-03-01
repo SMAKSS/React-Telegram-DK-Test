@@ -213,6 +213,8 @@ class EditMediaDialog extends React.Component {
                 }
                 break;
             }
+            default:
+                break;
         }
     };
 
@@ -452,7 +454,7 @@ class EditMediaDialog extends React.Component {
     }
 
     render() {
-        const { classes, chatId, messageId, open, t } = this.props;
+        const { chatId, messageId, open, t } = this.props;
         if (!open) return null;
 
         const { defaultText, defaultUrl, openEditUrl } = this.state;

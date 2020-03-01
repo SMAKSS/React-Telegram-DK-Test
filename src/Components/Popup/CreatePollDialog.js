@@ -169,6 +169,8 @@ class CreatePollDialog extends React.Component {
 
                 break;
             }
+            default:
+                break;
         }
 
         if (isSpecial || isNavigational) {

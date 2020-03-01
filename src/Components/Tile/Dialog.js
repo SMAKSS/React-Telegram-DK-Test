@@ -85,7 +85,6 @@ class Dialog extends Component {
 
     handleSelect = event => {
         if (event.button === 0) {
-            console.log(this.props.chatId);
             openChat(this.props.chatId);
         }
     };
@@ -203,6 +202,8 @@ class Dialog extends Component {
 
                 return t('ViewGroupInfo');
             }
+            default:
+                break;
         }
     };
 
@@ -236,7 +237,7 @@ class Dialog extends Component {
     };
 
     render() {
-        const { chatId, showSavedMessages, hidden, t, isLastPinned } = this.props;
+        const { chatId, showSavedMessages, hidden, t } = this.props;
         const { contextMenu, left, top, canToggleArchive, canTogglePin } = this.state;
 
         if (hidden) return null;
@@ -301,7 +302,6 @@ class Dialog extends Component {
                         </MenuList>
                     </Popover>
                 </div>
-                {/*{isLastPinned && <div className='dialog-bottom-separator'/>}*/}
             </>
         );
     }

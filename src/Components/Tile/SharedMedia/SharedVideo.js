@@ -142,7 +142,7 @@ class SharedVideo extends React.Component {
 
     render() {
         const { chatId, messageId, openMedia, style, showOpenMessage, t } = this.props;
-        const { minithumbnail, thumbnail, video, width, height, duration } = this.props.video;
+        const { minithumbnail, thumbnail, duration } = this.props.video;
         const { contextMenu, left, top, openDeleteDialog, revoke } = this.state;
 
         const message = MessageStore.get(chatId, messageId);

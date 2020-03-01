@@ -175,6 +175,7 @@ class Footer extends React.Component {
                     default:
                         break;
                 }
+                break;
             }
             default:
                 break;

@@ -238,6 +238,8 @@ class HeaderPlayer extends React.Component {
 
                 break;
             }
+            default:
+                break;
         }
     };
 
@@ -278,7 +280,6 @@ class HeaderPlayer extends React.Component {
         } else {
             const src = this.getMediaSrc(PlayerStore.message);
             const playing = Boolean(src);
-            const playlist = PlayerStore.playlist;
             this.setState(
                 {
                     message: PlayerStore.message,

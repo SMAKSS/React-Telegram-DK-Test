@@ -144,6 +144,8 @@ class Code extends React.Component {
             case 'authenticationCodeTypeTelegramMessage': {
                 return codeInfo.type.length;
             }
+            default:
+                break;
         }
 
         return 0;
@@ -166,6 +168,8 @@ class Code extends React.Component {
             case 'authenticationCodeTypeTelegramMessage': {
                 return "Please enter the code you've just received in your previous Telegram app.";
             }
+            default:
+                break;
         }
 
         return 'Subtitle';

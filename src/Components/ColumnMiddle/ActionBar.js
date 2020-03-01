@@ -175,6 +175,8 @@ class ActionBar extends React.Component {
                 );
                 break;
             }
+            default:
+                break;
         }
 
         return (

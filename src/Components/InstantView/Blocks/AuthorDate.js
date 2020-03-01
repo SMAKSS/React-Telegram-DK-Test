@@ -16,7 +16,7 @@ function AuthorDate(props) {
     return (
         <address>
             {hasAuthor && (
-                <a rel='author'>
+                <a href='/#' rel='author'>
                     <RichText text={author} />
                 </a>
             )}

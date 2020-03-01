@@ -123,6 +123,7 @@ class IframeResizer extends React.Component {
         const { src, id, frameBorder, className, style } = this.props;
         return (
             <iframe
+                title='iframe'
                 ref={this.frameRef}
                 src={src}
                 id={id}

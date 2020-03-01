@@ -140,7 +140,7 @@ class InstantViewMediaViewer extends React.Component {
         const caption = getBlockCaption(block);
         const url = getBlockUrl(block);
 
-        const [width, height, file] = getViewerFile(media, size);
+        const [file] = getViewerFile(media, size);
 
         let title = '';
         if (media['@type'] === 'photo') {

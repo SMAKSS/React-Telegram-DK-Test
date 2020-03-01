@@ -135,7 +135,7 @@ class SafeLink extends React.Component {
                     </a>
                 ) : (
                     <>
-                        <a className={className} title={decodedUrl} onClick={this.handleClick}>
+                        <a href='/#' className={className} title={decodedUrl} onClick={this.handleClick}>
                             {children || url}
                         </a>
                         {confirm && (

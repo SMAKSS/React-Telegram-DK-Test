@@ -9,7 +9,7 @@ import './Call.css';
 
 class Call extends React.Component {
     render() {
-        const { chatId, messageId, duration, openMedia, title, meta } = this.props;
+        const { chatId, messageId, duration, title, meta } = this.props;
 
         const callTitle = getCallTitle(chatId, messageId);
         const durationString = getDurationString(Math.floor(duration || 0));

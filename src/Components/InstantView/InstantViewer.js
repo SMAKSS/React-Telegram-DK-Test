@@ -184,7 +184,7 @@ class InstantViewer extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        const { instantView, url } = this.props;
+        const { instantView } = this.props;
         console.log('[IV] componentDidUpdate', instantView.url, instantView.url === prevProps.instantView.url);
 
         const hash = new URL(instantView.url).hash;
@@ -283,8 +283,8 @@ class InstantViewer extends React.Component {
     }
 
     render() {
-        const { classes, instantView } = this.props;
-        const { hasPrev, hasScroll, media, caption, url } = this.state;
+        const { instantView } = this.props;
+        const { hasScroll, media, caption, url } = this.state;
         if (!instantView) return null;
 
         return (

@@ -14,7 +14,6 @@ import red from '@material-ui/core/colors/red';
 import orange from '@material-ui/core/colors/orange';
 import amber from '@material-ui/core/colors/amber';
 import green from '@material-ui/core/colors/green';
-import blue from '@material-ui/core/colors/blue';
 import indigo from '@material-ui/core/colors/indigo';
 import deepPurple from '@material-ui/core/colors/deepPurple';
 import ApplicationStore from '../../Stores/ApplicationStore';
@@ -65,6 +64,8 @@ class ThemePicker extends React.Component {
                 return 'indigo';
             case deepPurple['500']:
                 return 'deepPurple';
+            default:
+                break;
         }
 
         return null;
@@ -86,6 +87,8 @@ class ThemePicker extends React.Component {
                 return indigo;
             case 'deepPurple':
                 return deepPurple;
+            default:
+                break;
         }
 
         return null;

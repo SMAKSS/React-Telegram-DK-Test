@@ -288,6 +288,8 @@ class ApplicationStore extends EventEmitter {
 
                 break;
             }
+            default:
+                break;
         }
     };
 

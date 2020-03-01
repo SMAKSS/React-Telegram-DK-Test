@@ -258,7 +258,7 @@ function getFormattedText(formattedText, t = k => k) {
             }
             case 'textEntityTypeHashtag': {
                 result.push(
-                    <a key={entityKey} onClick={event => searchCurrentChat(event, entityText)}>
+                    <a href='/#' key={entityKey} onClick={event => searchCurrentChat(event, entityText)}>
                         {entityText}
                     </a>
                 );
@@ -568,6 +568,8 @@ function isForwardOriginHidden(forwardInfo) {
         case 'messageForwardOriginChannel': {
             return false;
         }
+        default:
+            break;
     }
 
     return false;
@@ -595,6 +597,8 @@ function getForwardTitle(forwardInfo, t = key => key) {
 
             return getChatTitle(chat_id, false, t) + (author_signature ? ` (${author_signature})` : '');
         }
+        default:
+            break;
     }
 
     return '';
@@ -925,7 +929,10 @@ function getMediaTitle(message, t = k => k) {
                 }
                 break;
             }
+            break;
         }
+        default:
+            break;
     }
 
     return getAuthor(message, t);
@@ -958,6 +965,8 @@ function hasAudio(chatId, messageId) {
 
             break;
         }
+        default:
+            break;
     }
 
     return false;
@@ -990,6 +999,8 @@ function hasVideoNote(chatId, messageId) {
 
             break;
         }
+        default:
+            break;
     }
 
     return false;
@@ -1024,8 +1035,6 @@ function getSearchMessagesFilter(chatId, messageId) {
         case 'messageVideoNote': {
             const { video_note } = content;
             if (video_note) {
-                return null;
-
                 return {
                     '@type': 'searchMessagesFilterVideoNote'
                 };
@@ -1037,31 +1046,28 @@ function getSearchMessagesFilter(chatId, messageId) {
             if (web_page) {
                 const { audio, voice_note, video_note } = web_page;
                 if (audio) {
-                    return null;
-
                     return {
                         '@type': 'searchMessagesFilterAudio'
                     };
                 }
 
                 if (voice_note) {
-                    return null;
-
                     return {
                         '@type': 'searchMessagesFilterVoiceNote'
                     };
                 }
 
                 if (video_note) {
-                    return null;
-
                     return {
                         '@type': 'searchMessagesFilterVideoNote'
                     };
                 }
                 break;
             }
+            break;
         }
+        default:
+            break;
     }
 
     return null;
@@ -1560,6 +1566,8 @@ function openMedia(chatId, messageId, fileCancel = true) {
 
             break;
         }
+        default:
+            break;
     }
 }
 
@@ -1672,6 +1680,8 @@ export function getReplyMinithumbnail(chatId, messageId) {
             const { minithumbnail } = video_note;
             return minithumbnail || null;
         }
+        default:
+            break;
     }
 
     return null;
@@ -1792,6 +1802,8 @@ function getReplyPhotoSize(chatId, messageId) {
             const { thumbnail } = video_note;
             return thumbnail || null;
         }
+        default:
+            break;
     }
 
     return null;

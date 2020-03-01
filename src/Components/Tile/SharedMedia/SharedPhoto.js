@@ -17,7 +17,6 @@ import { forwardMessages, openChat } from '../../../Actions/Client';
 import { getSrc } from '../../../Utils/File';
 import { getSize } from '../../../Utils/Common';
 import { getChatShortTitle, isPrivateChat } from '../../../Utils/Chat';
-import { isBlurredThumbnail } from '../../../Utils/Media';
 import FileStore from '../../../Stores/FileStore';
 import MessageStore from '../../../Stores/MessageStore';
 import TdLibController from '../../../Controllers/TdLibController';
@@ -160,7 +159,6 @@ class SharedPhoto extends React.Component {
         const miniSrc = minithumbnail ? 'data:image/jpeg;base64, ' + minithumbnail.data : null;
         const thumbSrc = getSrc(thumbSize ? thumbSize.photo : null);
         const src = getSrc(photoSize.photo);
-        const isBlurred = miniSrc || isBlurredThumbnail(thumbSize);
 
         return (
             <div className='shared-photo' style={style} onClick={openMedia} onContextMenu={this.handleContextMenu}>

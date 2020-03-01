@@ -146,14 +146,14 @@ class TelegramApp extends Component {
     };
 
     handleKeyDown = event => {
-        //console.log('KeyDown', event);
+        console.log('KeyDown', event);
     };
 
     render() {
-        const { t, theme } = this.props;
-        const { inactive, nativeMobile, tdlibDatabaseExists, fatalError } = this.state;
+        const { theme } = this.props;
+        const { inactive, nativeMobile, fatalError } = this.state;
         let { authorizationState, prevAuthorizationState } = this.state;
-        const state = authorizationState;
+
         if (
             !authorizationState ||
             authorizationState['@type'] === 'authorizationStateWaitEncryptionKey' ||
@@ -161,26 +161,14 @@ class TelegramApp extends Component {
         ) {
             if (prevAuthorizationState) {
                 authorizationState = prevAuthorizationState;
-            }
-            // else if (tdlibDatabaseExists) {
-            //     authorizationState = {
-            //         '@type': 'authorizationStateReady'
-            //     }
-            // }
-            else {
+            } else {
                 authorizationState = {
                     '@type': 'authorizationStateWaitPhoneNumber'
                 };
             }
         }
 
-        const loading = t('Loading').replace('...', '');
         let page = <MainPage />;
-        //     (
-        //     <React.Suspense fallback={<StubPage title='' />}>
-        //         <MainPage />
-        //     </React.Suspense>
-        // );
 
         if (nativeMobile) {
             page = <NativeAppPage />;
@@ -202,29 +190,12 @@ class TelegramApp extends Component {
                     break;
                 case 'authorizationStateWaitEncryptionKey':
                 case 'authorizationStateWaitTdlibParameters': {
-                    // if (!tdlibDatabaseExists) {
-                    //     page = (
-                    //         <AuthForm
-                    //             authorizationState={authorizationState}
-                    //             onChangePhone={this.handleChangePhone}
-                    //         />
-                    //     );
-                    // }
-
                     break;
                 }
+                default:
+                    break;
             }
         }
-
-        // console.log(
-        //     'TelegramApp.render',
-        //     state,
-        //     prevAuthorizationState,
-        //     'nativeMobile=' + nativeMobile,
-        //     'inactive=' + inactive,
-        //     'tdlibDb=' + tdlibDatabaseExists,
-        //     page
-        // );
 
         return (
             <div
@@ -289,12 +260,10 @@ async function openPinnedChat(index) {
 
 document.addEventListener('keyup', event => {
     keyMap.delete(event.key);
-    //console.log('keyup key=' + event.key, keyMap);
 });
 
 document.addEventListener('keydown', async event => {
     keyMap.set(event.key, event.key);
-    //console.log('keydown key=' + event.key, event.altKey, event.ctrlKey, event, keyMap);
 
     const { authorizationState } = AppStore;
     if (!authorizationState) return;
@@ -353,6 +322,8 @@ document.addEventListener('keydown', async event => {
                 openPinnedChat(4);
                 break;
             }
+            default:
+                break;
         }
     }
 });
@@ -360,7 +331,6 @@ document.addEventListener('keydown', async event => {
 window.hasFocus = true;
 
 // set offline on page lost focus
-// console.log('[ns] window.onblur attach');
 window.onblur = function() {
     keyMap.clear();
 
@@ -373,7 +343,6 @@ window.onblur = function() {
 };
 
 // set online on page get focus
-// console.log('[ns] window.onfocus attach');
 window.onfocus = function() {
     keyMap.clear();
 
