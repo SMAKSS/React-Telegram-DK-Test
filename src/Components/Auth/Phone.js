@@ -248,20 +248,23 @@ class Phone extends React.Component {
     onUpdateConnectionState = update => {
         const { connecting, startMessaging } = this.state;
         this.startMessagingFlag = !(!connecting && !startMessaging);
-        console.log(this.startMessagingFlag);
+        const { state } = update;
 
-        if (!this.startMessagingFlag) {
+        if (state['@type'] === 'connectionStateReady') {
+            this.setCountryCode();
+            if (!this.startMessagingFlag) {
+                this.setState({ startMessaging: false });
+                this.startMessagingButtonStyle.current.classList.add('active');
+                this.startMessagingButtonStyle.current.innerHTML = '';
+                this.loginTitle.current.style.color = 'var(--background)';
+                document.getElementsByClassName('auth-caption-telegram-logo')[0].classList.add('active');
+            }
+        } else {
             this.setState({ startMessaging: true });
             this.startMessagingButtonStyle.current.classList.remove('active');
             this.startMessagingButtonStyle.current.innerHTML = 'Start Messaging';
             this.loginTitle.current.style.color = '';
             document.getElementsByClassName('auth-caption-telegram-logo')[0].classList.remove('active');
-        }
-
-        const { state } = update;
-
-        if (state['@type'] === 'connectionStateReady') {
-            this.setCountryCode();
         }
 
         this.setState({ connecting: isConnecting(state) });

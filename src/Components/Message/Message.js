@@ -588,7 +588,7 @@ class Message extends Component {
                 onAnimationEnd={this.handleAnimationEnd}
                 onContextMenu={this.handleContextMenu}>
                 {showUnreadSeparator && <UnreadSeparator />}
-                <div className='message-body'>
+                <div className={classNames('message-body', { 'row-reversed': !is_outgoing })}>
                     <div className='message-padding'>
                         <CheckMarkIcon className='message-select-tick' />
                     </div>

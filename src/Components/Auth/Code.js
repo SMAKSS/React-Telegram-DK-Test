@@ -12,6 +12,8 @@ import TdLibController from '../../Controllers/TdLibController';
 import './Code.css';
 
 class Code extends React.Component {
+    _isMounted = false;
+
     constructor(props) {
         super(props);
 
@@ -25,6 +27,7 @@ class Code extends React.Component {
     }
 
     componentDidMount() {
+        this._isMounted = true;
         TdLibController.clientUpdate({
             '@type': 'clientUpdateMonkeyIdle'
         });
@@ -34,11 +37,11 @@ class Code extends React.Component {
 
     componentWillUnmount() {
         AppStore.off('updateConnectionState', this.onUpdateConnectionState);
+        this._isMounted = false;
     }
 
     onUpdateConnectionState = update => {
         const { state } = update;
-
         this.setState({ connecting: isConnecting(state) });
     };
 
@@ -56,6 +59,7 @@ class Code extends React.Component {
         const code = this.code;
 
         this.setState({ loading: true });
+
         TdLibController.send({
             '@type': 'checkAuthenticationCode',
             code: code,
@@ -80,7 +84,9 @@ class Code extends React.Component {
                 });
             })
             .finally(() => {
-                this.setState({ loading: false });
+                if (this._isMounted) {
+                    this.setState({ loading: false });
+                }
             });
     };
 
@@ -197,7 +203,11 @@ class Code extends React.Component {
                         <span>{title}</span>
                         {connecting && <HeaderProgress />}
                     </Typography>
-                    <IconButton aria-label='edit' onClick={this.handleBack} disabled={loading}>
+                    <IconButton
+                        className='auth-section-button'
+                        aria-label='edit'
+                        onClick={this.handleBack}
+                        disabled={loading}>
                         <EditIcon fontSize='small' />
                     </IconButton>
                 </div>

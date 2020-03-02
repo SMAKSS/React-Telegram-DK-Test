@@ -20,3 +20,10 @@
 .dialogs-third-column {
     width: calc(25% - 0px);
 }
+
+@media only screen and (max-width: 768px) {
+    .dialogs {
+        width: 100%;
+        float: none;
+    }
+}

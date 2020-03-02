@@ -25,7 +25,6 @@
 }
 
 .web-page-button {
-    width: 260px;
     margin-top: 12px;
     /*color: var(--message-in-reply-title);*/
 }
@@ -47,4 +46,11 @@
     transform: translateZ(0);
     overflow: hidden;
     cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+    .web-page-wrapper .pointer {
+        width: auto !important;
+        height: auto !important;
+    }
 }

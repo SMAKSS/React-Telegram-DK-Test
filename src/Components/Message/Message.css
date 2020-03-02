@@ -71,6 +71,10 @@ pre code {
     flex-direction: row;
 }
 
+.message-body.row-reversed {
+    flex-direction: row-reverse;
+}
+
 .message:hover .message-select-tick {
     opacity: 0.5;
 }
@@ -355,4 +359,14 @@ pre code {
 
 .message-out .message-control-disabled {
     color: var(--text-disabled);
+}
+
+@media only screen and (max-width: 768px) {
+    .message-padding {
+        min-width: unset;
+    }
+
+    .message-wrapper {
+        width: 80%;
+    }
 }

@@ -1,7 +1,6 @@
 .dialog-details {
     float: left;
     width: calc(75% - 0px);
-    /*max-width: 672px;*/
     margin: 0;
     box-sizing: border-box;
     height: 100%;
@@ -17,4 +16,11 @@
 
 .dialog-details-third-column {
     width: calc(50% - 0px);
+}
+
+@media only screen and (max-width: 768px) {
+    .dialog-details {
+        width: 100%;
+        float: none;
+    }
 }

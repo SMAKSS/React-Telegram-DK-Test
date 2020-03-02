@@ -16,6 +16,7 @@ class NativeApp extends React.Component {
 
     render() {
         let src = 'Android_2x.jpg';
+
         if (isIOS()) {
             src = 'iOS_2x.jpg';
         } else if (isWindowsPhone()) {

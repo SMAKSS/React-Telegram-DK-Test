@@ -1,13 +1,16 @@
 .auth-root {
     display: flex;
     flex-direction: column;
-    width: 360px;
+    width: calc(100% - 18px);
+    max-width: 360px;
     flex-shrink: 0;
+    margin: 0 auto;
 }
 
 .start-messaging {
-    font-size: 16px;
+    width: calc(100% - 18px);
     max-width: 360px;
+    font-size: 16px;
     border: 1px solid var(--media-in-tile-background);
     background: var(--media-in-tile-background);
     border-radius: 50% 50% 0 0;
@@ -16,7 +19,6 @@
     position: fixed;
     text-align: center;
     bottom: 0;
-    width: 100%;
     cursor: pointer;
     z-index: 0;
 }

@@ -13,7 +13,6 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import packageJson from '../package.json';
 import AuthForm from './Components/Auth/AuthForm';
 import InactivePage from './Components/InactivePage';
-import NativeAppPage from './Components/NativeAppPage';
 import registerServiceWorker from './registerServiceWorker';
 import { loadData } from './Utils/Phone';
 import { isMobile } from './Utils/Common';
@@ -26,8 +25,6 @@ import TdLibController from './Controllers/TdLibController';
 import './TelegramApp.css';
 
 import MainPage from './Components/MainPage';
-
-// const MainPage = React.lazy(() => import('./Components/MainPage'));
 
 class TelegramApp extends Component {
     constructor(props) {
@@ -151,7 +148,7 @@ class TelegramApp extends Component {
 
     render() {
         const { theme } = this.props;
-        const { inactive, nativeMobile, fatalError } = this.state;
+        const { inactive, fatalError } = this.state;
         let { authorizationState, prevAuthorizationState } = this.state;
 
         if (
@@ -170,9 +167,7 @@ class TelegramApp extends Component {
 
         let page = <MainPage />;
 
-        if (nativeMobile) {
-            page = <NativeAppPage />;
-        } else if (inactive) {
+        if (inactive) {
             page = <InactivePage />;
         } else if (authorizationState) {
             switch (authorizationState['@type']) {

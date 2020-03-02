@@ -13,3 +13,13 @@
     display: flex;
     flex-direction: column;
 }
+
+@media only screen and (max-width: 768px) {
+    .right-column {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        float: none;
+        z-index: 1;
+    }
+}
