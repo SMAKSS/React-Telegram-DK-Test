@@ -72,6 +72,12 @@
     margin: 8px 0 8px 12px;
 }
 
+.back-icon {
+    cursor: pointer;
+    margin: 8px 0 8px 12px;
+    color: var(--header-subtle-color);
+}
+
 .cursor-pointer {
     cursor: pointer;
 }

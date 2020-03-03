@@ -537,6 +537,7 @@ class Message extends Component {
                 date={date}
                 editDate={edit_date}
                 views={views}
+                key={chatId}
             />
         );
         const text = getText(message, inlineMeta, t);
@@ -651,10 +652,10 @@ class Message extends Component {
                     <div className='message-padding' />
                 </div>
                 <Popover
-                    open={contextMenu}
+                    open={contextMenu ? contextMenu : false}
                     onClose={this.handleCloseContextMenu}
                     anchorReference='anchorPosition'
-                    anchorPosition={{ top, left }}
+                    anchorPosition={{ top: top ? top : 0, left: left ? left : 0 }}
                     anchorOrigin={{
                         vertical: 'bottom',
                         horizontal: 'right'
@@ -679,7 +680,7 @@ class Message extends Component {
                 </Popover>
                 <Dialog
                     transitionDuration={0}
-                    open={confirmStopPoll}
+                    open={confirmStopPoll ? confirmStopPoll : false}
                     onClose={this.handleCloseConfirm}
                     aria-labelledby='form-dialog-title'>
                     <DialogTitle id='form-dialog-title'>{t('StopPollAlertTitle')}</DialogTitle>

@@ -83,9 +83,12 @@ class Dialog extends Component {
         }
     };
 
-    handleSelect = event => {
+    handleSelect = async event => {
         if (event.button === 0) {
-            openChat(this.props.chatId);
+            await openChat(this.props.chatId);
+            if (window.innerWidth < 768) {
+                document.getElementsByClassName('dialog-details')[0].style.cssText = 'top: 0; position: absolute';
+            }
         }
     };
 

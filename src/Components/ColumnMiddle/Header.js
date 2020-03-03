@@ -11,6 +11,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
+import ArrowBackIosRoundedIcon from '@material-ui/icons/ArrowBackIosRounded';
 import MainMenuButton from './MainMenuButton';
 import HeaderChat from '../Tile/HeaderChat';
 import HeaderCommand from './HeaderCommand';
@@ -100,6 +101,10 @@ class Header extends Component {
             canBeDeletedForAllUsers: canBeDeletedForAllUsers,
             revoke: canBeDeletedForAllUsers
         });
+    };
+
+    handleBackIcon = () => {
+        document.getElementsByClassName('dialog-details')[0].style.cssText = '';
     };
 
     handleRevokeChange = () => {
@@ -258,6 +263,11 @@ class Header extends Component {
 
         control = control || (
             <div className='header-details'>
+                {window.innerWidth < 768 && (
+                    <IconButton aria-label='back icon' className='back-icon' onClick={this.handleBackIcon}>
+                        <ArrowBackIosRoundedIcon />
+                    </IconButton>
+                )}
                 {showProgressAnimation ? (
                     <div
                         className={classNames('header-status', 'grow', chat ? 'cursor-pointer' : 'cursor-default')}

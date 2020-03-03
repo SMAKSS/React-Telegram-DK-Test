@@ -20,5 +20,6 @@
 }
 
 .day-meta-wrapper div {
-    transform: translate(0, 1px);
+    transform: translate(0, 3px);
+    font-size: 14px;
 }

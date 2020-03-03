@@ -361,12 +361,14 @@ pre code {
     color: var(--text-disabled);
 }
 
+@media only screen and (max-width: 968px) {
+    .message-wrapper {
+        width: 80%;
+    }
+}
+
 @media only screen and (max-width: 768px) {
     .message-padding {
         min-width: unset;
-    }
-
-    .message-wrapper {
-        width: 80%;
     }
 }

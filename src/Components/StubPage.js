@@ -17,6 +17,7 @@ import '../TelegramApp.css';
 class StubPage extends React.Component {
     render() {
         const { title, t } = this.props;
+        console.log(title);
         const isChatDetailsVisible = false;
 
         const dialogs = Array.from(Array(10)).map((x, index) => <DialogPlaceholder key={index} index={index} />);
