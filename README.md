@@ -1,15 +1,12 @@
 # Telegram Web App
 
->This project is the output of 3-4 days hard working for the DK interview test. It's based on [Telegram Database Library](https://github.com/tdlib/td) for signing in old telegram users and creating new telegram accounts based on a valid phone number exactly as like as Telegram.
-
-### Some fact about this project
-
-- Due to the lack of time, part of the work is duplicated from the Telegram web app and it's just got a bit refactored and styled into something new.
-- There are plenty of bugs and warnings in this project right now and it could be gone, if there were some more days on this project.
+>This project is the output of hard working for the DK interview test. It's based on [Telegram Database Library](https://github.com/tdlib/td) for signing in old telegram users and creating new telegram accounts based on a valid phone number exactly as like as Telegram.
 
 ### Here are some screenshots
 
 <img src="public/screenShots/login.png" width="150"/>  <img src="public/screenShots/homePage.png" width="150"/> <img src="public/screenShots/channelView.png" width="150"/>  <img src="public/screenShots/groupView.png" width="150"/> <img src="public/screenShots/settings.png" width="150"/>
+
+---
 
 ### Running locally
 Install [node.js](http://nodejs.org/).
