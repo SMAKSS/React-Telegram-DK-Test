@@ -85,7 +85,7 @@ class Dialog extends Component {
 
     handleSelect = async event => {
         if (event.button === 0) {
-            await openChat(this.props.chatId);
+            openChat(this.props.chatId);
             if (window.innerWidth < 768) {
                 document.getElementsByClassName('dialog-details')[0].style.cssText = 'top: 0; position: absolute';
             }

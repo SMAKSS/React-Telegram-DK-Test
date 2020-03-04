@@ -14,6 +14,7 @@ import AppStore from '../../Stores/ApplicationStore';
 import TdLibController from '../../Controllers/TdLibController';
 import '../ColumnMiddle/Header.css';
 import SettingsMenuButton from './Settings/SettingsMenuButton';
+import HeaderProgress from '../ColumnMiddle/HeaderProgress';
 
 class DialogsHeader extends React.Component {
     constructor(props) {

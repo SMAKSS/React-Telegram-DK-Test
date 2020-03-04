@@ -15,6 +15,7 @@ import TdLibController from '../../Controllers/TdLibController';
 import './DialogsList.css';
 
 class DialogsList extends React.Component {
+    _isMounted = false;
     constructor(props) {
         super(props);
 
@@ -95,6 +96,7 @@ class DialogsList extends React.Component {
     }
 
     componentDidMount() {
+        this._isMounted = true;
         this.loadFirstSlice();
 
         AppStore.on('updateAuthorizationState', this.onUpdateAuthorizationState);
@@ -120,6 +122,7 @@ class DialogsList extends React.Component {
 
         ChatStore.off('clientUpdateFastUpdatingComplete', this.onFastUpdatingComplete);
         ChatStore.off('clientUpdateLeaveChat', this.onClientUpdateLeaveChat);
+        this._isMounted = false;
     }
 
     onClientUpdateLeaveChat = update => {
@@ -283,10 +286,12 @@ class DialogsList extends React.Component {
             offset_order: offsetOrder,
             limit: CHAT_SLICE_LIMIT
         }).finally(() => {
-            this.loading = false;
-            if (type === 'chatListMain') console.log('[update] GETCHATS stop');
-            if (replace) {
-                TdLibController.clientUpdate({ '@type': 'clientUpdateDialogsReady' });
+            if (this._isMounted) {
+                this.loading = false;
+                if (type === 'chatListMain') console.log('[update] GETCHATS stop');
+                if (replace) {
+                    TdLibController.clientUpdate({ '@type': 'clientUpdateDialogsReady' });
+                }
             }
         });
         // TdLibController.send({

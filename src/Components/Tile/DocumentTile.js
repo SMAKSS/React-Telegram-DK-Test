@@ -82,8 +82,7 @@ DocumentTile.propTypes = {
     thumbnail: PropTypes.object,
     file: PropTypes.object,
     openMedia: PropTypes.func,
-    icon: PropTypes.node,
-    completeIcon: PropTypes.oneOf([PropTypes.node, PropTypes.func])
+    icon: PropTypes.node
 };
 
 export default DocumentTile;

@@ -36,7 +36,7 @@ class Language extends React.Component {
         const info = LocalizationStore.info || { language_packs: [] };
 
         const languages = info.language_packs.map(x => (
-            <div className='settings-item' onClick={() => this.handleChange(x.id)}>
+            <div className='settings-item' onClick={() => this.handleChange(x.id)} key={x.id}>
                 <Radio
                     color='primary'
                     className='settings-item-control'

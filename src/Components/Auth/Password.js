@@ -37,6 +37,7 @@ function debounce(func, wait, immediate) {
 }
 
 class Password extends React.Component {
+    _isMounted = false;
     constructor(props) {
         super(props);
 
@@ -52,6 +53,7 @@ class Password extends React.Component {
     }
 
     componentDidMount() {
+        this._isMounted = true;
         TdLibController.clientUpdate({
             '@type': 'clientUpdateMonkeyClose'
         });
@@ -61,6 +63,7 @@ class Password extends React.Component {
 
     componentWillUnmount() {
         AppStore.off('updateConnectionState', this.onUpdateConnectionState);
+        this._isMounted = false;
     }
 
     onUpdateConnectionState = update => {
@@ -104,7 +107,9 @@ class Password extends React.Component {
                 });
             })
             .finally(() => {
-                this.setState({ loading: false });
+                if (this._isMounted) {
+                    this.setState({ loading: false });
+                }
             });
     };
 
