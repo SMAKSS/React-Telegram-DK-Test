@@ -1,6 +1,6 @@
 # Telegram Web App
 
->This project is the output of hard working for the DK interview test. It's based on [Telegram Database Library](https://github.com/tdlib/td) for signing in old telegram users and creating new telegram accounts based on a valid phone number exactly as like as Telegram.
+>This project is the output of hard working for the DK interview test. It's based on [Telegram Database Library](https://github.com/tdlib/td) and [Telegram-react](https://github.com/evgeny-nadymov/telegram-react) for signing in old telegram users and creating new telegram accounts based on a valid phone number exactly as like as Telegram.
 
 ### Here are some screenshots
 
