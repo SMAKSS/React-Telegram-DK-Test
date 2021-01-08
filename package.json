@@ -11,7 +11,7 @@
     "classnames": "^2.2.6",
     "emoji-mart": "^2.11.2",
     "emoji-regex": "^8.0.0",
-    "i18next": "^15.0.7",
+    "i18next": "^19.8.4",
     "iframe-resizer": "^4.2.9",
     "lottie-web": "^5.5.10",
     "notistack": "^0.5.1",
